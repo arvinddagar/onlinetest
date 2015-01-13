@@ -1,0 +1,5 @@
+<div if= "flash" style= "position: relative; margin-left: 70px;">
+       <%flash.each do |key,value|%>
+         <div id="flash_<%= key%>"><%= value%></div>
+       <%end%>
+    </div>

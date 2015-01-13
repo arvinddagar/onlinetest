@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="span8 offset0" >
+      <h4 class="widget-header">Welcome  <%= current_user.email %></h4>
+      <div class="widget-body">
+       </br></br>
+        <table style='width: 121%;margin-left: 11%;'>
+          <tr class="active">
+            <td><strong>User Email</strong></td>
+            <td> <%= current_user.email %> </td>
+          </tr>
+           <tr>
+            <td><strong>User Name</strong></td>
+            <td> <%= current_user.name %> </td>
+          </tr>
+          <tr>
+            <td><strong>Test Category</strong></td>
+            <td>  <%= @user_current_test.test_master.name%> </td>
+          </tr>
+          <tr>
+          <td><strong>Total number of Questions</strong></td>
+            <td> <%= @user_current_test.users_answers.count %> </td>
+          </tr>
+          <tr>
+            <td><strong>No of Attempted Questions</strong></td>
+            <td> <%= @user_attempted.count %> </td>
+          </tr>
+          <tr>
+            <td><strong>Total Score</strong></td>
+            <td> <%= @total_score%> </td>
+          </tr>
+        </table>
+       
+      </div>
+    </div>
+  </div>
+</div>

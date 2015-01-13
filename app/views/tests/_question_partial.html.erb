@@ -1,0 +1,41 @@
+<%= form_tag('/submit_answer', remote: true) do %>        
+    <h2>
+      
+        <%if !(params[:type]=="skipped_set")%>
+           <%=@test.current_step+1%>.
+        <%end%>
+        <%= @question.content.capitalize %>
+      </h2>
+    </br> </br>
+    <% @question.answers.each do |answer| %>
+      <%= render 'timer'%>
+      <h3><ul class="just">
+          <center><%= answer.content.capitalize %>
+       <%= radio_button_tag "answer[id]", answer.id%></center>
+      </ul></h3>
+    <%end%>
+    <%= hidden_field_tag 'question_id', @question.id , id: 'question_id' %>
+       <%= hidden_field_tag 'user_current_test', @user_current_test.id %>
+        <%if !(params[:type]=="skipped_set")%>
+            <div id="sub">
+              <%= submit_tag("Next" , :style=>'width: 17%;margin-top: 10%;' , id: 'sub')%></div><hr>
+              <%= submit_tag("skip" , :name => "skip_button") %>    
+        <%else%>
+               <div id="sub">
+              <%= submit_tag("submit" , :name=> 'skipped_set' , :style=>'width: 17%;margin-top: 10%;' , id: 'sub')%></div><hr>
+              <%= submit_tag("skip" , :name => "skipped_set") %>
+        <%end%>
+<% end %>  
+<script>
+$( "#sub" ).click(function() {
+    if ($('input[name=answer[id]]:checked').length > 0) {
+      document.getElementById('sub').disabled = false;
+    }
+    else {
+      alert('please select your ans')
+      return false;
+    }
+});
+</script>
+
+

@@ -1,0 +1,11 @@
+
+
+
+<h1>Skipped Questions</h1>
+<%@skip.each do |record|%>
+<%= link_to record.question.content, submit_answer_path(question_id: record.question.id,user_current_test: @user_current_test.id, type: 'skipped_set'), remote: true  %>
+<br>
+
+<%end%>
+
+<%= button_to "Final Submit", testsubmit_path(@user_current_test.id) %>

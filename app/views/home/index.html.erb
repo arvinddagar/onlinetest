@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="page-header">
+    <h1></h1>
+  </div>
+  <div class="row">
+    <div class="span6 offset0">
+      <h4 class="widget-header">INSTRUCTIONS</h4>
+      <div class="widget-body">
+        <%= @start %>
+      <div class="center-align">
+        <ul class='just'>
+          <strong><li>You are going to take a computer  based online Test at a workstation. </li>
+          <li>You are required to be present in the Test Centre 30 minutes before the starting time of the Test as specified in the admit card. </li>
+          <li>Do not carry any of your belongings inside the exam centre including mobile phone, cellular phones, pagers, palm tops, blue tooth device, or any electronic device which has the potential  of misuse in cheating or unauthorized communication during the examination.</li>
+          <li>You are allowed to carry only pen / pencil inside the test centre.</li>
+          <li>You are required to produce your Hall Ticket and ID proof  (which bears your photograph and date of birth) at the registration desk without which the entry will not be allowed.</li></strong>
+        </ul>
+          
+        </div>
+      </div>
+    </div>
+    <div class="span6 offset6" style='margin-top: -29%;'>
+      <h4 class="widget-header" style>Welcome  <%= current_user.email %></h4>
+      <div class="widget-body">
+          
+              <div id='test_test_data' style='color:red';> </div>
+        <!-- <div id='test_test_data' style='color:red';> </div> -->
+        <div class="center-align">
+         <%= form_tag('/index' , class: 'form-horizontal form-signin-signup') do %>       
+          <span style="height:50px"><%= text_field_tag(:a, nil ,placeholder: 'Enter Coupon', required: true ,onblur: "testTime()")%></span><br></h3>
+          <%= submit_tag("Submit" ,:id=> 'sub') %>
+        <% end %> 
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

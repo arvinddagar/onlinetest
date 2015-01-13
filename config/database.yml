@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: online_test
+  pool: 5
+  username: root
+  password: root
+  min_messages: warning
+  host: localhost

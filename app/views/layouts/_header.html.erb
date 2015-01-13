@@ -1,0 +1,58 @@
+<header>
+  <% if request.url.include?('testquestions') %>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a href="#" class="brand brand-bootbus">Online Test</a>
+          <div class="nav-collapse collapse" style='display:inline'>        
+            <ul class="nav pull-left">
+              <li> <a name=sendName id=sendId href="#" onclick="return false;" >About Us</a></li>
+              <li> <a name=sendName id=sendId href="#" onclick="return false;" >Contact Us</a></li>
+              <% if user_signed_in? %>
+                <div style='margin-left: %;'>
+                  Signed in as <%= current_user.email %>
+                  <li></li>
+              <% else %>
+                <div style='margin-left: %;'>
+                  <a name=sendName id=sendId href="#" onclick="return false;" >Sign Up</a> or <a name=sendName id=sendId href="#" onclick="return false;" >Sign in</a>
+                </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+  <% else %>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a href="#" class="brand brand-bootbus">Online Test</a>
+          <div class="nav-collapse collapse" style='display:inline'>        
+            <ul class="nav pull-left">
+              <li> <%= link_to "About us", about_us_path %> </li>
+              <li> <%= link_to "Contact us", contact_us_path %> </li>
+              <% if user_signed_in? %>
+                <div style='margin-left: %;'>
+                  Signed in as <%= current_user.email %>
+                  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              <% else %>
+                <div style='margin-left: %;'>
+                  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in",new_user_session_path %>
+                </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+<% end %>
+</header>      
+
+<script type="text/javascript">
+$(document).ready(function() {
+    document.getElementByClassName('static').disabled=true;
+        event.preventDefault(); // Prevent link from following its href
+    
+});
+</script>
+
+
+

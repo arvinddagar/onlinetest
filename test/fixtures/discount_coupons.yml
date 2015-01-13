@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  token: MyString
+  cost: 1
+  used: false
+  user_id: 1
+
+two:
+  token: MyString
+  cost: 1
+  used: false
+  user_id: 1

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>OnlineTest</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery.min' %>
+  <%= javascript_include_tag "bootstrap.min" %>
+  <%#= javascript_include_tag "boot-business" %>
+  <%= stylesheet_link_tag "bootstrap.min.css" %>
+    <!-- Bootstrap responsive -->
+  <%= stylesheet_link_tag "bootstrap-responsive.min.css" %>
+    <!-- Font awesome - iconic font with IE7 support --> 
+  <%= stylesheet_link_tag "font-awesome.css" %>
+  <%= stylesheet_link_tag "font-awesome-ie7.css" %>
+    <!-- Bootbusiness theme -->
+  <%= stylesheet_link_tag "boot-business" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'layouts/header' %>
+   <div class="container">
+    <!-- <img src="assets/test.jpg" alt="Smiley face" style='background:url(assets/test.jpg)' > -->
+
+    <div class= 'content' style='width: 112%;margin-left: -6%;'>
+     <%= render "layouts/flashes" -%>
+      <%= yield %>
+    </div>
+  </div>
+  <%= render 'layouts/footer' %>
+</body>
+</html>

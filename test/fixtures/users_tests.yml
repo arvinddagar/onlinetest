@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  test_id: 1
+  discount_coupon_id: 1
+  start_time: 2014-12-21 00:17:24
+  end_time: 2014-12-21 00:17:24
+  score: 1
+
+two:
+  user_id: 1
+  test_id: 1
+  discount_coupon_id: 1
+  start_time: 2014-12-21 00:17:24
+  end_time: 2014-12-21 00:17:24
+  score: 1

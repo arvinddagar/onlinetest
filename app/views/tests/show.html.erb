@@ -1,0 +1,40 @@
+  
+  <div class="page-header" style="margin-left: 7px;">
+    <h1>Welcome <%= current_user.email %></h1>
+  </div>
+  <div class="row">
+
+    <%#= image_tag 'test.jpg' %>
+
+    <div class="span6 offset3">
+      <h3> Test Time Left: <%= render 'timer' %></h3>
+      <!-- <h3> Number of Questions attempted:<%#= @questions.count %>/h3> -->
+      <div id="countdown"></div> 
+      <div id="notifier"></div>
+      <h4 class="widget-header"> <%= @test.name %> Test</h4>
+      <div class="widget-body">
+      
+      <%= hidden_field_tag 'id' ,  @test.id , :id => 'test_master_id' %>
+        <div class="center-align"  id="div1">
+        <%if @skip.present?%>
+           <%= render 'skip_questions' %>
+        <%else%>
+         <%= render 'question_partial' %>
+         <%end%>
+        
+
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<body onload='startTimer()'>
+ <div id="div2"></div>
+<script type = "text/javascript" >
+//     window.onbeforeunload = function() { return "You work will be lost."; };
+
+</script>
+    
+    
+    
